@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<trains>
+	<train id="1">
+		<name>Minsk-Moscow</name>
+		<speed>59</speed>
+
+		<locomotive lenght="25.8">
+			<mark>BT17</mark>
+			<efficiency>0.95</efficiency>
+			<locomotive-type>Electric</locomotive-type>
+		</locomotive>
+
+		<passenger-waggon lenght="24.4">
+			<number-seat>25</number-seat>
+			<passenger-waggon-type>Coupe</passenger-waggon-type>
+		</passenger-waggon>
+
+		<luggage-waggon lenght="29.4">
+			<weight>2555</weight>
+		</luggage-waggon>
+	</train>
+
+	<train id="2">
+		<name>Minsk-Kiev</name>
+		<speed>79</speed>
+
+		<locomotive lenght="25.8">
+			<mark>ЛT9ч</mark>
+			<efficiency>0.93</efficiency>
+			<locomotive-type>Heat</locomotive-type>
+		</locomotive>
+
+		<locomotive lenght="25.8">
+			<mark>RG5</mark>
+			<efficiency>0.94</efficiency>
+			<locomotive-type>Electric</locomotive-type>
+		</locomotive>
+
+		<passenger-waggon lenght="24.4">
+			<number-seat>56</number-seat>
+			<passenger-waggon-type>Third_class</passenger-waggon-type>
+		</passenger-waggon>
+
+		<passenger-waggon lenght="24.4">
+			<number-seat>45</number-seat>
+			<passenger-waggon-type>Coupe</passenger-waggon-type>
+		</passenger-waggon>
+
+		<passenger-waggon lenght="24.4">
+			<number-seat>70</number-seat>
+			<passenger-waggon-type>Third_class</passenger-waggon-type>
+		</passenger-waggon>
+
+		<luggage-waggon lenght="29.4">
+			<weight>1230</weight>
+		</luggage-waggon>
+
+		<luggage-waggon lenght="29.4">
+			<weight>2240</weight>
+		</luggage-waggon>
+	</train>
+</trains>

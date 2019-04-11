@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:element name="trains">
+		
+        <xs:complexType>
+			<xs:sequence>
+				<xs:element name="train" type="Train" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+	
+<!-- TRAIN -->
+	<xs:complexType name="Train">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="speed" type="xs:integer" />
+			<xs:element name="locomotive" type="Locomotive" minOccurs="1" maxOccurs="2" />
+			<xs:element name="passenger-waggon" type="PassengerWaggon" minOccurs="1" maxOccurs="15" />
+			<xs:element name="luggage-waggon" type="LuggageWaggon" minOccurs="1" maxOccurs="5" />
+		</xs:sequence>
+			<xs:attribute name="id" type="xs:integer" use="required" />
+	</xs:complexType>
+	
+	
+
+	
+<!-- LOCOMOTIVE -->
+	<xs:complexType name="Locomotive">
+		<xs:sequence>
+			<xs:element name="mark" type="xs:string" />
+			<xs:element name="efficiency" type="xs:double" />
+			<xs:element name="locomotive-type" type="LocomotiveType" />
+		</xs:sequence>	
+		<xs:attribute name="lenght" type="xs:double" use="required" />
+	</xs:complexType>
+
+<!-- LOCOMOTIVE_TYPE -->
+	<xs:simpleType name="LocomotiveType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Electric" />
+			<xs:enumeration value="Heat" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+<!-- LUGGAGE_WAGGONS -->	
+	<xs:complexType name="LuggageWaggon">
+		<xs:sequence>
+			<xs:element name="weight" type="LuggageWeight" />
+		</xs:sequence>
+		<xs:attribute name="lenght" type="xs:double" use="required" />
+	</xs:complexType>
+	
+	<xs:simpleType name="LuggageWeight">
+		<xs:restriction base="xs:double"> 
+			<xs:minExclusive value="0" />
+			<xs:maxExclusive value="3500" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+<!-- PASSENGER_WAGGONS -->
+	<xs:complexType name="PassengerWaggon">
+		<xs:sequence>
+			<xs:element name="number-seat" type="xs:integer" />
+			<xs:element name="passenger-waggon-type" type="PassengerWaggonType" />
+		</xs:sequence>
+		<xs:attribute name="lenght" type="xs:double" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="PassengerWaggonType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Coupe" />
+			<xs:enumeration value="Reserved_berth" />
+			<xs:enumeration value="Third_class" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
